@@ -17,9 +17,7 @@ class VitalSignsActivity : AppCompatActivity() {
 
         expandButton = findViewById<View>(R.id.expand) as Button
 
-        // when users presses the login button
-
-        // when users presses the login button
+        // when users presses the expand button
         expandButton!!.setOnClickListener(View.OnClickListener() {
 
             openWaveformActivity() // opens to next page
