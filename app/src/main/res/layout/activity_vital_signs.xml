@@ -1,0 +1,538 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".VitalSignsActivity"> <!-- connected to VitalSignsActivity.java Page-->
+
+<!-- UW Medicing top logo-->
+    <ImageView
+        android:id="@+id/UW_top_logo"
+        android:layout_width="265dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/uw_medicine_top_logo" />
+
+    <!-- Container for Operation Room #1's (OR-001) information and interaction -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView1"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="110dp"
+        android:layout_marginEnd="20dp"
+        app:cardElevation="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- Container contaning Operation Room #1's (OR-001) communication, alarm, Vital signs and charts -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#dfe0e0"
+            android:orientation="vertical">
+
+            <!-- Operation Room#1 (OR-001) Alert Button -->
+            <ImageButton
+                android:id="@+id/alarmOR_001"
+                android:layout_width="48dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="90dp"
+                android:contentDescription="Alarm button to notify medical staff to go to OR-001"
+                app:srcCompat="@drawable/alert_icon"></ImageButton>
+
+            <!-- Operation Room#1 (OR-001) label -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:paddingStart="5dp"
+                android:text="@string/OR_001"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                tools:ignore="RtlSymmetry,TextSizeCheck"></TextView>
+
+            <!-- Operation Room#1 (OR-001) Group Chat Button-->
+            <ImageButton
+                android:id="@+id/messageOR_001"
+                android:layout_width="47dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="250dp"
+                android:contentDescription="Group Chat Button for medical staff to disccuse about the patient in OR-001"
+                app:srcCompat="@drawable/message_icon_2"
+                tools:ignore="DuplicateIds" />
+
+            <!-- Operation Room#1 (OR-001) Extend button to display vital chart -->
+            <ImageButton
+                android:id="@+id/openOR_001"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="320dp"
+                android:contentDescription="Extend Button for medical staff to see vital chart for patient in OR-001"
+                app:srcCompat="@drawable/open" />
+
+        </RelativeLayout>
+        <!-- End of Container contaning Operation Room #1's (OR-001) communication, alarm, Vital signs and charts -->
+
+        <LinearLayout
+            android:layout_width="633dp"
+            android:layout_height="140dp"
+            android:layout_marginTop="65dp"
+            android:background="#4c4e4d" />
+
+    </androidx.cardview.widget.CardView>
+    <!-- End of Container for Operation Room #1's (OR-001) information and interaction -->
+
+    <!-- Container for waveforms for room 1
+        initially set to invisible -->
+    <FrameLayout
+        android:id="@+id/waveformFragmentContainer1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@id/cardView1"
+        app:layout_constraintStart_toStartOf="@id/cardView1"
+        app:layout_constraintTop_toBottomOf="@id/cardView1"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView2"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        app:cardElevation="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/waveformFragmentContainer1"> <!-- constrain top of card2 by bottom of waveform Fragment -->
+
+        <!-- Container contaning Operation Room #2's (OR-002) communication, alarm, Vital signs and charts -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="#dfe0e0"
+            android:orientation="vertical">
+
+            <!-- Operation Room#2 (OR-002) Alert Button -->
+            <ImageButton
+                android:id="@+id/alarmOR_002"
+                android:layout_width="48dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="90dp"
+                android:contentDescription="Alarm button to notify medical staff to go to OR-002"
+                app:srcCompat="@drawable/alert_icon"
+                tools:ignore="DuplicateIds"></ImageButton>
+
+            <!-- Operation Room#2 (OR-002) label -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:paddingStart="5dp"
+                android:text="@string/or_002"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                tools:ignore="RtlSymmetry,TextSizeCheck"></TextView>
+
+            <!-- Operation Room#2 (OR-002) Group Chat Button-->
+            <ImageButton
+                android:id="@+id/messageOR_002"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="250dp"
+                android:contentDescription="Group Chat Button for medical staff to disccuse about the patient in OR-002"
+                app:srcCompat="@drawable/message_icon_2" />
+
+            <!-- Operation Room#2 (OR-002) Extend button to display vital chart -->
+            <ImageButton
+                android:id="@+id/openOR_002"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="320dp"
+                android:contentDescription="Extend Button for medical staff to see vital chart for patient in OR-002"
+                app:srcCompat="@drawable/open" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="35dp"
+            android:background="#4c4e4d" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="65dp"
+            android:background="#4c4e4d" />
+
+
+    </androidx.cardview.widget.CardView>
+    <!-- End of Container for Operation Room #2's (OR-002) information and interaction -->
+
+    <FrameLayout
+        android:id="@+id/waveformFragmentContainer2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@id/cardView2"
+        app:layout_constraintStart_toStartOf="@id/cardView2"
+        app:layout_constraintTop_toBottomOf="@id/cardView2"/>
+
+    <!-- Container for Operation Room #3's (OR-003) information and interaction -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView3"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        app:cardElevation="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/waveformFragmentContainer2">
+
+        <!-- Container contaning Operation Room #3's (OR-003) communication, alarm, Vital signs and charts -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="#dfe0e0"
+            android:orientation="vertical">
+
+            <!-- Operation Room#3 (OR-003) Alert Button -->
+            <ImageButton
+                android:id="@+id/alarmOR_003"
+                android:layout_width="48dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="90dp"
+                android:contentDescription="Alarm button to notify medical staff to go to OR-003"
+                app:srcCompat="@drawable/alert_icon"></ImageButton>
+
+            <!-- Operation Room#3 (OR-003) label -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:paddingStart="5dp"
+                android:text="@string/or_003"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                tools:ignore="RtlSymmetry,TextSizeCheck"></TextView>
+
+            <!-- Operation Room#3 (OR-003) Group Chat Button-->
+            <ImageButton
+                android:id="@+id/messageOR_003"
+                android:layout_width="48dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="250dp"
+                android:contentDescription="Group Chat Button for medical staff to disccuse about the patient in OR-003"
+                app:srcCompat="@drawable/message_icon_2" />
+
+            <!-- Operation Room#3 (OR-003) Extend button to display vital chart -->
+            <ImageButton
+                android:id="@+id/openOR_003"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="320dp"
+                android:contentDescription="Extend Button for medical staff to see vital chart for patient in OR-003"
+                app:srcCompat="@drawable/open" />
+
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginTop="35dp"
+            android:background="#4c4e4d" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="65dp"
+            android:background="#4c4e4d" />
+    </androidx.cardview.widget.CardView>
+    <!-- End of Container for Operation Room #3's (OR-003) information and interaction -->
+
+    <FrameLayout
+        android:id="@+id/waveformFragmentContainer3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@id/cardView3"
+        app:layout_constraintStart_toStartOf="@id/cardView3"
+        app:layout_constraintTop_toBottomOf="@id/cardView3"/>
+
+    <!-- Container for Operation Room #4's (OR-004) information and interaction -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView4"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        app:cardElevation="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/waveformFragmentContainer3">
+
+        <!-- Container contaning Operation Room #4's (OR-004) communication, alarm, Vital signs and charts -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="#dfe0e0"
+            android:orientation="vertical">
+
+            <!-- Operation Room#4 (OR-004) Alert Button -->
+            <ImageButton
+                android:id="@+id/alarmOR_004"
+                android:layout_width="48dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="90dp"
+                android:contentDescription="Alarm button to notify medical staff to go to OR-004"
+                app:srcCompat="@drawable/alert_icon"></ImageButton>
+
+            <!-- Operation Room#4 (OR-004) label -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:paddingStart="5dp"
+                android:text="@string/or_004"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                tools:ignore="RtlSymmetry,TextSizeCheck"></TextView>
+
+            <!-- Operation Room#4 (OR-004) Group Chat Button-->
+            <ImageButton
+                android:id="@+id/messageOR_004"
+                android:layout_width="48dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="250dp"
+                android:contentDescription="Group Chat Button for medical staff to disccuse about the patient in OR-004"
+                app:srcCompat="@drawable/message_icon_2" />
+
+            <!-- Operation Room#4 (OR-004) Extend button to display vital chart -->
+            <ImageButton
+                android:id="@+id/openOR_004"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="320dp"
+                android:contentDescription="Extend Button for medical staff to see vital chart for patient in OR-005"
+                app:srcCompat="@drawable/open" />
+
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginTop="35dp"
+            android:background="#4c4e4d" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="65dp"
+            android:background="#4c4e4d" />
+    </androidx.cardview.widget.CardView>
+    <!-- End of Container for Operation Room #4's (OR-004) information and interaction -->
+
+    <FrameLayout
+        android:id="@+id/waveformFragmentContainer4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@id/cardView4"
+        app:layout_constraintStart_toStartOf="@id/cardView4"
+        app:layout_constraintTop_toBottomOf="@id/cardView4"/>
+
+    <!-- Container for Operation Room #5's (OR-005) information and interaction -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView5"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        app:cardElevation="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/waveformFragmentContainer4">
+
+        <!-- Container contaning Operation Room #5's (OR-005) communication, alarm, Vital signs and charts -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="#dfe0e0"
+            android:orientation="vertical">
+
+            <!-- Operation Room#5 (OR-005) Alert Button -->
+            <ImageButton
+                android:id="@+id/alarmOR_005"
+                android:layout_width="48dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="90dp"
+                android:contentDescription="Alarm button to notify medical staff to go to OR-005"
+                app:srcCompat="@drawable/alert_icon"></ImageButton>
+
+            <!-- Operation Room#5 (OR-005) label -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:paddingStart="5dp"
+                android:text="@string/or_005"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                tools:ignore="RtlSymmetry,TextSizeCheck"></TextView>
+
+            <!-- Operation Room#5 (OR-005) Group Chat Button-->
+            <ImageButton
+                android:id="@+id/messageOR_005"
+                android:layout_width="48dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="250dp"
+                android:contentDescription="Group Chat Button for medical staff to disccuse about the patient in OR-005"
+                app:srcCompat="@drawable/message_icon_2" />
+
+            <!-- Operation Room#5 (OR-005) Extend button to display vital chart -->
+            <ImageButton
+                android:id="@+id/openOR_005"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="320dp"
+                android:contentDescription="Extend Button for medical staff to see vital chart for patient in OR-005"
+                app:srcCompat="@drawable/open" />
+
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginTop="35dp"
+            android:background="#4c4e4d" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="65dp"
+            android:background="#4c4e4d" />
+    </androidx.cardview.widget.CardView>
+    <!-- End of Container for Operation Room #5's (OR-005) information and interaction -->
+
+    <FrameLayout
+        android:id="@+id/waveformFragmentContainer5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@id/cardView5"
+        app:layout_constraintStart_toStartOf="@id/cardView5"
+        app:layout_constraintTop_toBottomOf="@id/cardView5"/>
+
+    <!-- Container for Operation Room #6's (OR-006) information and interaction -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView6"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        app:cardElevation="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/waveformFragmentContainer5">
+
+        <!-- Container contaning Operation Room #6's (OR-006) communication, alarm, Vital signs and charts -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="#dfe0e0"
+            android:orientation="vertical">
+
+            <!-- Operation Room#6 (OR-006) Alert Button -->
+            <ImageButton
+                android:id="@+id/alarmOR_006"
+                android:layout_width="48dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="90dp"
+                android:contentDescription="Alarm button to notify medical staff to go to OR-006"
+                app:srcCompat="@drawable/alert_icon"></ImageButton>
+
+            <!-- Operation Room#6 (OR-006) label -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:paddingStart="5dp"
+                android:text="@string/or_006"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                tools:ignore="RtlSymmetry,TextSizeCheck"></TextView>
+
+            <!-- Operation Room#6 (OR-006) Group Chat Button-->
+            <ImageButton
+                android:id="@+id/messageOR_006"
+                android:layout_width="48dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="250dp"
+                android:contentDescription="@string/group_chat_button_for_medical_staff_to_disccuse_about_the_patient_in_or_006"
+                app:srcCompat="@drawable/message_icon_2" />
+
+            <!-- Operation Room#6 (OR-006) Extend button to display vital chart -->
+            <ImageButton
+                android:id="@+id/openOR_006"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="320dp"
+                android:contentDescription="Extend Button for medical staff to see vital chart for patient in OR-006"
+                app:srcCompat="@drawable/open" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginTop="35dp"
+            android:background="#4c4e4d" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="65dp"
+            android:background="#4c4e4d" />
+    </androidx.cardview.widget.CardView>
+    <!-- End of Container for Operation Room #6's (OR-006) information and interaction -->
+
+    <FrameLayout
+        android:id="@+id/waveformFragmentContainer6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@id/cardView6"
+        app:layout_constraintStart_toStartOf="@id/cardView6"
+        app:layout_constraintTop_toBottomOf="@id/cardView6"/>
+
+    <!-- Settings Button-->
+    <ImageButton
+        android:id="@+id/settingButton"
+        android:layout_width="53dp"
+        android:layout_height="55dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.955"
+        android:contentDescription="Setting button to go to the Setting page"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.033"
+        app:srcCompat="@drawable/setting_icon" />
+    <!-- End of Settings Button-->
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+

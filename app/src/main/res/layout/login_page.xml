@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Login Page Layout -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="58dp"
+        tools:layout_editor_absoluteY="16dp">
+
+        <!-- UW Medicine Logo -->
+        <ImageView
+            android:id="@+id/UWLogo"
+            android:layout_width="297dp"
+            android:layout_height="299dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="57dp"
+            android:layout_marginTop="36dp"
+            android:layout_marginEnd="57dp"
+            android:layout_marginBottom="396dp"
+            android:contentDescription="@string/tlogo"
+            app:srcCompat="@drawable/uw_medicine_logo"
+            />
+
+        <LinearLayout
+            android:layout_width="247dp"
+            android:layout_height="250dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="82dp"
+            android:layout_marginEnd="82dp"
+            android:layout_marginBottom="114dp"
+            android:orientation="vertical">
+
+            <!-- Email Login -->
+            <EditText
+                android:id="@+id/inputEmail_"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:ems="10"
+                android:hint="@string/email"
+                android:importantForAutofill="no"
+                android:inputType="textEmailAddress" />
+
+
+            <!-- Password Login -->
+            <EditText
+                android:id="@+id/inputPassword_"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:ems="10"
+                android:hint="@string/password"
+                android:importantForAutofill="no"
+                android:inputType="textPassword" />
+
+            <!-- Login Button -->
+            <Button
+                android:id="@+id/loginButton_"
+                android:layout_width="match_parent"
+                android:layout_height="63dp"
+                android:text="@string/login" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout> <!-- end of page -->
